@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEPU - Investissement & Firebase</title>
+    <title>HEPU plateforme - Investissement & </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -368,8 +368,8 @@
                 ↪️ Commencez à bâtir votre patrimoine dès maintenant !
             </div>
             <div class="announcement-buttons">
-                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=w5IccxXaETlkOTNk'">Chaîne Telegram</button>
-                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=EBkdiJosNX02ZDQ0'">Groupe Telegram</button>
+                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=Sg84LO2fdmM4Mjdk"''>Chaîne Telegram</button>
+                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=0X3dyLFiol9kMmNk''">Groupe Telegram</button>
             </div>
             <button class="btn-close-announcement" onclick="closeAnnouncement()">Désactiver les rappels</button>
         </div>
@@ -659,11 +659,11 @@
                     </div>
                     <i class="fas fa-chevron-right" style="color: #2CA5E0;"></i>
                 </div>
-                <div class="method-card" onclick="window.location.replace('tg://resolve?domain=admiinhepu')" style="background: #e8f4f8; border-color: #2CA5E0;">
+                <div class="method-card" onclick="window.location.replace('tg://resolve?domain=@HEPUZU')" style="background: #e8f4f8; border-color: #2CA5E0;">
                     <i class="fas fa-user-tie" style="font-size: 30px; color: #2CA5E0; margin-right: 15px;"></i>
                     <div style="flex:1;">
                         <span style="display:block; font-weight: bold; color: #333; font-size: 15px;">Service Client</span>
-                        <span style="display:block; font-size: 11px; color: #666; margin-top: 3px;">@admiinhepu</span>
+                        <span style="display:block; font-size: 11px; color: #666; margin-top: 3px;">@HEPUZU</span>
                     </div>
                     <i class="fas fa-chevron-right" style="color: #2CA5E0;"></i>
                 </div>
@@ -1244,7 +1244,7 @@
         <div class="nav-item" onclick="switchPage('product-page', this)"><i class="fas fa-th-large"></i>Produit</div>
         <div class="nav-item" onclick="switchPage('team-page', this); loadTeamStats();"><i class="fas fa-user-friends"></i>Équipe</div>
         <div class="nav-item" onclick="switchPage('profile-page', this)"><i class="fas fa-user"></i>Mien</div>
-    </nav>     <script>
+    </nav>        <script>
         // --- CONFIGURATION FIREBASE ---
         const firebaseConfig = {
             apiKey: "AIzaSyAKrQ1dFGFxT3D5x1j-FTt9DRUVTkggpSA",
@@ -1271,7 +1271,6 @@
         // =========================================================================
         function closeAnnouncement() {
             document.getElementById('announcement-modal').style.display = 'none';
-            // L'annonce réapparaîtra à la prochaine actualisation !
         }
 
         // =========================================================================
@@ -1355,7 +1354,6 @@
 
         // --- AUTHENTIFICATION & ECRAN DE CHARGEMENT ---
         auth.onAuthStateChanged((user) => {
-            // On cache l'écran de chargement quoi qu'il arrive
             let splash = document.getElementById('splash-screen');
             if(splash) splash.style.display = 'none';
 
@@ -1401,7 +1399,7 @@
 
             if (isLoginMode) {
                 try { await auth.signInWithEmailAndPassword(fakeEmail, pass); } 
-                catch (error) { customAlert("Erreur : chez numéro n'es pas enregistré."); }
+                catch (error) { customAlert("Erreur : Ce numéro n'est pas enregistré ou le mot de passe est incorrect."); }
             } else {
                 const confirmPass = document.getElementById('reg-pass-confirm').value;
                 if(pass !== confirmPass) { customAlert("Mots de passe différents"); return; }
@@ -1410,12 +1408,12 @@
                     await db.collection("users").doc(userCredential.user.uid).set({
                         uid: userCredential.user.uid,
                         phoneNumber: fullPhone, 
-                        balance: 1000, // BONUS D'INSCRIPTION DE 1000F
+                        balance: 1000, 
                         revenue: 0,
                         inviteCode: "HEPU" + fullPhone.substring(fullPhone.length - 4),
                         referredBy: refCode || "Aucun",
                         blocked: false,
-                        claimedBonuses: [], // Préparation tableau pour codes uniques
+                        claimedBonuses: [],
                         createdAt: firebase.firestore.FieldValue.serverTimestamp()
                     });
                 } catch (error) { customAlert(error.message); }
@@ -1427,7 +1425,6 @@
             document.getElementById('main-dashboard').classList.add('active');
             document.getElementById('bottom-nav').style.display = 'flex'; 
             
-            // Affichage de l'annonce à chaque actualisation
             let annModal = document.getElementById('announcement-modal');
             if(annModal) annModal.style.display = 'flex';
             
@@ -1443,7 +1440,7 @@
                     const data = doc.data();
                     let cleanPhone = (data.phoneNumber || instantPhone).replace(/\s+/g, '').replace('+', '');
                     if(data.blocked === true && cleanPhone !== "22666867654") {
-                        customAlert("Votre compte a été gelée par l'administration.");
+                        customAlert("Votre compte a été gelé par l'administration.");
                         logout();
                         return;
                     }
@@ -1475,7 +1472,8 @@
             const inviteCodeText = "HEPU" + shortPhone;
             document.getElementById('my-invite-code').innerText = inviteCodeText;
             
-            let baseUrl = window.location.href.split('?')[0].split('#')[0]; 
+            // ICI : ON FIXE LE LIEN GITHUB EN DUR POUR LE PARRAINAGE
+            let baseUrl = "https://hepuhepu2-ux.github.io/HEPU-HEPU/"; 
             document.getElementById('my-invite-link').innerText = baseUrl + "?ref=" + inviteCodeText;
 
             let cleanPhone = phone.replace(/\s+/g, '').replace('+', '');
@@ -1498,9 +1496,6 @@
             } catch(e) { console.log("Erreur Marquee", e); }
         }
 
-        // =========================================================================
-        // LA MACHINE À ARGENT : DISTRIBUTION AUTOMATIQUE 24H
-        // =========================================================================
         async function checkAndClaimDailyRevenues(uid) {
             try {
                 const purchasesSnap = await db.collection("purchases")
@@ -1558,9 +1553,6 @@
             } catch(e) { console.log("Erreur calcul des revenus:", e); }
         }
 
-        // =========================================================================
-        // ACHAT DE PRODUIT ET DISTRIBUTION DES COMMISSIONS D'ÉQUIPE
-        // =========================================================================
         function confirmPurchase(productName, price, dailyRevenue, days) {
             if(!currentUserUid) {
                 customAlert("Veuillez vous connecter pour acheter.");
@@ -1825,9 +1817,6 @@
             document.getElementById('team-list-content').innerHTML = html;
         }
 
-        // =========================================================================
-        // HISTORIQUE DE RETRAIT CORRIGÉ
-        // =========================================================================
         async function loadUserWithdrawHistory() {
             const container = document.getElementById('history-withdraw-list');
             container.innerHTML = '<div style="text-align:center; padding:30px;">Chargement de vos retraits...</div>';
@@ -1841,7 +1830,6 @@
                 }
                 
                 let records = []; 
-                // CORRECTION : d.id pour récupérer l'ID correct de la transaction
                 snap.forEach(d => records.push({id: d.id, ...d.data()}));
                 records.sort((a,b) => (b.date?.seconds || 0) - (a.date?.seconds || 0));
 
@@ -1904,8 +1892,9 @@
                 records.forEach(r => {
                     let sColor = r.status === 'confirmed' ? '#27ae60' : (r.status === 'rejected' ? '#e41e26' : '#f39c12');
                     let sText = r.status === 'confirmed' ? 'Réussi' : (r.status === 'rejected' ? 'Échoué' : 'En vérification');
-                    let dt = r.date ? r.date.toDate().toLocaleString('fr-FR') : '';
-                    html += `<div style="background:white; padding:15px; margin-bottom:10px; border-radius:10px; border:1px solid #eee; display:flex; justify-content:space-between; align-items:center;"><div><p style="margin:0; font-weight:bold; font-size:14px; color:#333;">Dépôt ${r.operator||''}</p><p style="margin:5px 0 0 0; font-size:11px; color:#888;">${dt}</p></div><div style="text-align:right;"><p style="margin:0; font-weight:bold; font-size:15px; color:#1a2a6c;">+${(r.amount||0).toLocaleString()} F</p><p style="margin:5px 0 0 0; font-size:11px; color:${sColor}; font-weight:bold;">${sText}</p></div></div>`;
+                    let dt = r.date ? r.date.toDate() : new Date();
+                    let dateStr = dt.toLocaleDateString('fr-FR') + ' à ' + dt.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+                    html += `<div style="background:white; padding:15px; margin-bottom:10px; border-radius:10px; border:1px solid #eee; display:flex; justify-content:space-between; align-items:center;"><div><p style="margin:0; font-weight:bold; font-size:14px; color:#333;">Dépôt ${r.operator||''}</p><p style="margin:5px 0 0 0; font-size:11px; color:#888;">${dateStr}</p></div><div style="text-align:right;"><p style="margin:0; font-weight:bold; font-size:15px; color:#1a2a6c;">+${(r.amount||0).toLocaleString()} F</p><p style="margin:5px 0 0 0; font-size:11px; color:${sColor}; font-weight:bold;">${sText}</p></div></div>`;
                 });
                 container.innerHTML = html;
             } catch(e) { container.innerHTML = "<p style='text-align:center;'>Erreur de chargement.</p>"; }
@@ -1940,7 +1929,6 @@
             if (tabId === 'admin-bonus') loadAdminBonuses();
         }
 
-        // 1. GESTION DES UTILISATEURS
         async function loadAdminUsers() {
             const listDiv = document.getElementById('admin-list-users');
             const totalDisplay = document.getElementById('admin-total-users');
@@ -2032,7 +2020,6 @@
             });
         }
 
-        // 2. GESTION DES DEPOTS
         async function loadAdminDeposits(status, listId) {
             const listDiv = document.getElementById(listId);
             listDiv.innerHTML = '<div style="text-align:center; padding:15px;">Chargement...</div>';
@@ -2104,7 +2091,6 @@
             });
         }
 
-        // 3. GESTION DES RETRAITS ADMIN
         async function loadAdminWithdrawals() {
             const listDiv = document.getElementById('admin-list-withdraw');
             listDiv.innerHTML = '<div style="text-align:center; padding:15px;">Chargement...</div>';
@@ -2161,7 +2147,6 @@
             });
         }
 
-        // 4. GESTION DES BONUS (Création par l'admin)
         async function adminGenerateBonus() {
             const codeName = document.getElementById('admin-bonus-name').value.trim().toUpperCase();
             const amount = parseFloat(document.getElementById('admin-bonus-amount').value);
@@ -2191,9 +2176,6 @@
         }
         async function deleteBonus(docId) { await db.collection("bonuses").doc(docId).update({ usesLeft: 0 }); loadAdminBonuses(); }
 
-        // =========================================================================
-        // CODE BONUS : USAGE UNIQUE PAR UTILISATEUR
-        // =========================================================================
         async function submitUserBonus() {
             const codeInput = document.getElementById('bonus-code-input').value.trim().toUpperCase();
             if(!codeInput) { customAlert("Veuillez entrer un code."); return; }
@@ -2202,7 +2184,6 @@
                 const bonusRef = db.collection("bonuses").doc(codeInput);
                 const userRef = db.collection("users").doc(currentUserUid);
                 
-                // 1. Vérifier si l'utilisateur l'a déjà réclamé
                 const userDoc = await userRef.get();
                 const userData = userDoc.data();
                 let claimedBonuses = userData.claimedBonuses || [];
@@ -2212,12 +2193,10 @@
                     return;
                 }
 
-                // 2. Vérifier si le code existe et est valide
                 const doc = await bonusRef.get();
                 if (doc.exists && doc.data().usesLeft > 0) {
                     const amount = doc.data().amount;
                     
-                    // 3. Transaction sécurisée
                     await db.runTransaction(async (t) => {
                         const freshUserDoc = await t.get(userRef);
                         const freshBonusDoc = await t.get(bonusRef);
@@ -2260,9 +2239,6 @@
             }
         }
 
-        // =========================================================================
-        // RETRAIT (Vérification Achat VIP Obligatoire)
-        // =========================================================================
         async function submitWithdrawal() {
             const currentHour = new Date().getHours();
             if (currentHour < 10 || currentHour >= 17) { customAlert("Retraits autorisés entre 10h00 et 17h00 uniquement."); return; }
@@ -2279,7 +2255,6 @@
             if (amt > currentBalance) { customAlert("Solde insuffisant."); return; }
             
             try {
-                // VERIFICATION : L'utilisateur a-t-il acheté un produit VIP ?
                 const purchasesSnap = await db.collection("purchases").where("uid", "==", currentUserUid).get();
                 if (purchasesSnap.empty) {
                     customAlert("⚠️ Vous devez acheter au moins un produit VIP pour pouvoir effectuer un retrait.");
@@ -2316,7 +2291,6 @@
             }
         }
 
-        /* --- FENETRES ET NAVIGATION AVEC ANCRES (#) --- */
         function openWalletModal() { window.location.hash = 'wallet'; document.getElementById('wallet-modal').style.display = 'flex'; updateWalletUI();}
         function closeWalletModal() { document.getElementById('wallet-modal').style.display = 'none'; if(window.location.hash === '#wallet') window.history.back(); }
         function saveWallet() { localStorage.setItem('withdraw_name', document.getElementById('wallet-name').value.trim()); localStorage.setItem('withdraw_method', document.getElementById('wallet-method').value); localStorage.setItem('withdraw_phone', document.getElementById('wallet-phone').value.trim()); customAlert("Compte enregistré !"); closeWalletModal(); }
