@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEPU plateforme - Investissement & </title>
+    <title>HEPU plateforme - Investissement</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -164,7 +164,7 @@
         .btn-buy { background: #000; color: white; border: none; padding: 10px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer; height: fit-content; margin-left: 10px;}
         .btn-buy.btn-disabled { background: #d3d3d3; color: #777; cursor: not-allowed; }
 
-        /* --- STYLE DES COMMANDES ACHETÉES (NOUVEAU DESIGN CARD) --- */
+        /* --- STYLE DES COMMANDES ACHETÉES --- */
         .my-order-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; border-left: 4px solid var(--success); }
         .my-order-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-bottom: 10px; }
         .my-order-title { font-size: 16px; font-weight: bold; color: var(--primary); margin: 0; }
@@ -361,6 +361,7 @@
                 <b>✨ Bienvenue sur HEPU !</b><br>
                 ✔️ L'application de gestion de patrimoine et d'investissement la plus fiable !<br>
                 <ul>
+                    <li>Les nouveaux utilisateurs reçoivent 1 000 FCFA à l'inscription.</li>
                     <li>Gagnez une commission de 26 %, 2 % et 1 % grâce à trois niveaux de parrainage.</li>
                     <li>Lancement simultané dans plusieurs pays.</li>
                     <li>Investissement unique, 180 jours de rendements quotidiens.</li>
@@ -368,8 +369,8 @@
                 ↪️ Commencez à bâtir votre patrimoine dès maintenant !
             </div>
             <div class="announcement-buttons">
-                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=Sg84LO2fdmM4Mjdk"''>Chaîne Telegram</button>
-                <button class="btn-telegram-white" onclick="window.location.href='tg://join?invite=0X3dyLFiol9kMmNk''">Groupe Telegram</button>
+                <button class="btn-telegram-white" onclick="window.location.href='https://t.me/+Sg84LO2fdmM4Mjdk'">Chaîne Telegram</button>
+                <button class="btn-telegram-white" onclick="window.location.href='https://t.me/+0X3dyLFiol9kMmNk'">Groupe Telegram</button>
             </div>
             <button class="btn-close-announcement" onclick="closeAnnouncement()">Désactiver les rappels</button>
         </div>
@@ -643,7 +644,7 @@
                 <p style="font-size: 13px; color: #666; text-align: center; margin-bottom: 20px;">
                     Rejoignez notre communauté ou contactez l'assistance 24/7 sur Telegram.
                 </p>
-                <div class="method-card" onclick="window.location.replace('tg://join?invite=EBkdiJosNX02ZDQ0')" style="background: #e8f4f8; border-color: #2CA5E0;">
+                <div class="method-card" onclick="window.location.href='https://t.me/+0X3dyLFiol9kMmNk'" style="background: #e8f4f8; border-color: #2CA5E0;">
                     <i class="fab fa-telegram" style="font-size: 30px; color: #2CA5E0; margin-right: 15px;"></i>
                     <div style="flex:1;">
                         <span style="display:block; font-weight: bold; color: #333; font-size: 15px;">Groupe Telegram</span>
@@ -651,7 +652,7 @@
                     </div>
                     <i class="fas fa-chevron-right" style="color: #2CA5E0;"></i>
                 </div>
-                <div class="method-card" onclick="window.location.replace('tg://join?invite=w5IccxXaETlkOTNk')" style="background: #e8f4f8; border-color: #2CA5E0;">
+                <div class="method-card" onclick="window.location.href='https://t.me/+Sg84LO2fdmM4Mjdk'" style="background: #e8f4f8; border-color: #2CA5E0;">
                     <i class="fab fa-telegram" style="font-size: 30px; color: #2CA5E0; margin-right: 15px;"></i>
                     <div style="flex:1;">
                         <span style="display:block; font-weight: bold; color: #333; font-size: 15px;">Chaîne Telegram</span>
@@ -659,7 +660,7 @@
                     </div>
                     <i class="fas fa-chevron-right" style="color: #2CA5E0;"></i>
                 </div>
-                <div class="method-card" onclick="window.location.replace('tg://resolve?domain=@HEPUZU')" style="background: #e8f4f8; border-color: #2CA5E0;">
+                <div class="method-card" onclick="window.location.href='https://t.me/HEPUZU'" style="background: #e8f4f8; border-color: #2CA5E0;">
                     <i class="fas fa-user-tie" style="font-size: 30px; color: #2CA5E0; margin-right: 15px;"></i>
                     <div style="flex:1;">
                         <span style="display:block; font-weight: bold; color: #333; font-size: 15px;">Service Client</span>
@@ -1244,7 +1245,7 @@
         <div class="nav-item" onclick="switchPage('product-page', this)"><i class="fas fa-th-large"></i>Produit</div>
         <div class="nav-item" onclick="switchPage('team-page', this); loadTeamStats();"><i class="fas fa-user-friends"></i>Équipe</div>
         <div class="nav-item" onclick="switchPage('profile-page', this)"><i class="fas fa-user"></i>Mien</div>
-    </nav>        <script>
+    </nav>    <script>
         // --- CONFIGURATION FIREBASE ---
         const firebaseConfig = {
             apiKey: "AIzaSyAKrQ1dFGFxT3D5x1j-FTt9DRUVTkggpSA",
@@ -1271,6 +1272,7 @@
         // =========================================================================
         function closeAnnouncement() {
             document.getElementById('announcement-modal').style.display = 'none';
+            // Plus de sauvegarde locale : l'annonce réapparaîtra à chaque actualisation
         }
 
         // =========================================================================
@@ -1328,7 +1330,7 @@
         }
 
         // =========================================================================
-        // GESTION INSTANTANÉE DU BOUTON RETOUR PHYSIQUE (ANTI-E-DROID 100%)
+        // GESTION INSTANTANÉE DU BOUTON RETOUR PHYSIQUE (ANTI-E-DROID)
         // =========================================================================
         window.addEventListener('hashchange', function (event) {
             let hash = window.location.hash;
@@ -1408,7 +1410,7 @@
                     await db.collection("users").doc(userCredential.user.uid).set({
                         uid: userCredential.user.uid,
                         phoneNumber: fullPhone, 
-                        balance: 1000, 
+                        balance: 1000, // 1000F DE BONUS D'INSCRIPTION !
                         revenue: 0,
                         inviteCode: "HEPU" + fullPhone.substring(fullPhone.length - 4),
                         referredBy: refCode || "Aucun",
@@ -1425,6 +1427,7 @@
             document.getElementById('main-dashboard').classList.add('active');
             document.getElementById('bottom-nav').style.display = 'flex'; 
             
+            // Affichage de l'annonce à chaque actualisation
             let annModal = document.getElementById('announcement-modal');
             if(annModal) annModal.style.display = 'flex';
             
@@ -1472,7 +1475,7 @@
             const inviteCodeText = "HEPU" + shortPhone;
             document.getElementById('my-invite-code').innerText = inviteCodeText;
             
-            // ICI : ON FIXE LE LIEN GITHUB EN DUR POUR LE PARRAINAGE
+            // LIEN GITHUB FIXÉ ICI
             let baseUrl = "https://hepuhepu2-ux.github.io/HEPU-HEPU/"; 
             document.getElementById('my-invite-link').innerText = baseUrl + "?ref=" + inviteCodeText;
 
@@ -1496,6 +1499,9 @@
             } catch(e) { console.log("Erreur Marquee", e); }
         }
 
+        // =========================================================================
+        // DISTRIBUTION AUTOMATIQUE 24H
+        // =========================================================================
         async function checkAndClaimDailyRevenues(uid) {
             try {
                 const purchasesSnap = await db.collection("purchases")
@@ -1553,6 +1559,9 @@
             } catch(e) { console.log("Erreur calcul des revenus:", e); }
         }
 
+        // =========================================================================
+        // ACHAT DE PRODUIT ET COMMISSIONS D'ÉQUIPE
+        // =========================================================================
         function confirmPurchase(productName, price, dailyRevenue, days) {
             if(!currentUserUid) {
                 customAlert("Veuillez vous connecter pour acheter.");
@@ -2327,18 +2336,22 @@
             document.getElementById('detail-amount').innerText = selectedAmount; 
             document.getElementById('detail-sender-phone').innerText = selectedCountryCode + " " + document.getElementById('gopay-phone').value;
             
+            // LA MODIFICATION POUR WAVE EST ICI
             let recName = (selectedCountryCode === '+226' && selectedOperator === 'Orange Money') ? "Lankoande fatimata" : 
                           (selectedCountryCode === '+226' && selectedOperator === 'Moov Money') ? "yanogo" : 
+                          (selectedOperator === 'Wave Money') ? "Lankoande fatimata" : 
                           (selectedCountryCode === '+237' && selectedOperator === 'Orange Money') ? "ousmana adarou" : 
-                          (selectedCountryCode === '+237' && selectedOperator === 'MTN MoMo') ? "adarou ousmana" : "lankoande fatimata";
+                          (selectedCountryCode === '+237' && selectedOperator === 'MTN MoMo') ? "adarou ousmana" : "Ali";
                           
             let recPhone = (selectedCountryCode === '+226' && selectedOperator === 'Orange Money') ? "66035019" : 
                            (selectedCountryCode === '+226' && selectedOperator === 'Moov Money') ? "50006588" : 
+                           (selectedOperator === 'Wave Money') ? "66035019" : 
                            (selectedCountryCode === '+237' && selectedOperator === 'Orange Money') ? "695579234" : 
-                           (selectedCountryCode === '+237' && selectedOperator === 'MTN MoMo') ? "651131811" : "66035019";
+                           (selectedCountryCode === '+237' && selectedOperator === 'MTN MoMo') ? "651131811" : "74121236";
                            
             let ussdCode = (selectedCountryCode === '+226' && selectedOperator === 'Orange Money') ? `*144*2*1*${recPhone}*${selectedAmount}#` : 
                            (selectedCountryCode === '+226' && selectedOperator === 'Moov Money') ? `*555*2*1*${recPhone}*${selectedAmount}#` : 
+                           (selectedOperator === 'Wave Money') ? "" : 
                            (selectedCountryCode === '+237' && selectedOperator === 'Orange Money') ? `#150*1*1*${recPhone}*${selectedAmount}#` :
                            (selectedCountryCode === '+237' && selectedOperator === 'MTN MoMo') ? `*126*1*${recPhone}*${selectedAmount}#` : "";
                            
@@ -2419,3 +2432,5 @@
     </script>
 </body>
 </html>
+
+
